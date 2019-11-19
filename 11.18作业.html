@@ -35,7 +35,7 @@
     function a(){
         return 8
       }
-    </pre>
+  </pre>
 
   <hr>
   <ul>
@@ -76,41 +76,51 @@
   <hr>
   <form action="#">
     个人信息调查表
-    <hr>
-    性别<input type="radio" name="sex" value="sex">男
-    <input type="radio" name="sex" value="sex">女
-    <hr>
-    年龄<select name="age" id="">
-      <option selected hidden>请选择</option>
-      <optgroup label="少年">
-        <option>1-6岁</option>
-        <option>6-12岁</option>
-      </optgroup>
-      <optgroup label="青年">
-        <option>12-15岁</option>
-        <option>15-18岁</option>
-      </optgroup>
-      <optgroup>
-        <option>18-23岁</option>
-        <option>23-30岁</option>
-      </optgroup>
-    </select>
-    <hr>
-    生日<input type="date">
-    <hr>
-    生辰<input type="time">
-    <hr>
-    照片<label id="#bb">点我上传照片，位比文件上传按钮好看<input type="file" id="bb" hidden></label>
-    <hr>
-    肤色<input type="color">
-    <hr>
-    自我介绍<textarea name="" id="" cols="30" rows="10">&lt/textarea></textarea>
-    <fieldset disable>
-      <lenged>这里面的全部禁用</legend>
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <input type="text">
+    <dl>
+      <dt>性别</dt>
+      <dd><label for=""><input type="radio" name="sex" value="sex">男</label>
+        <label for=""><input type="radio" name="sex" value="sex">女</label></dd>
+
+      <dt>年龄</dt>
+      <dd><select name="age" id="">
+          <option selected hidden>请选择</option>
+          <optgroup label="少年">
+            <option>1-6岁</option>
+            <option>6-12岁</option>
+          </optgroup>
+          <optgroup label="青年">
+            <option>12-15岁</option>
+            <option>15-18岁</option>
+          </optgroup>
+          <optgroup>
+            <option>18-23岁</option>
+            <option>23-30岁</option>
+          </optgroup>
+        </select>
+      </dd>
+
+      <dt>生日</dt>
+      <dd><input type="date"></dd>
+
+      <dt>生辰</dt>
+      <dd><input type="time"></dd>
+
+      <dt>照片</dt>
+      <dd><label id="#bb">点我上传照片，位比文件上传按钮好看<input type="file" id="bb" hidden></label></dd>
+
+
+      <dt>肤色</dt>
+      <dd><input type="color"></dd>
+
+      <dt>自我介绍</dt>
+      <dd><textarea name="" id="" cols="30" rows="10">&lt/textarea></textarea></dd>
+    </dl>
+    <fieldset>
+      <legend>这里面禁用</legend>
+      <input type="text">
+      <input type="text">
+      <input type="text">
+      <input type="text">
     </fieldset>
     <input type="submit" name="" value="提交">
     <input type="reset" name="" value="重置">
