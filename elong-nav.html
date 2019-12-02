@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .wrap {
+      background-color: #2064c8;
+      color: white;
+
+    }
+
+    nav {
+      width: 600px;
+      margin: auto;
+      font-size: 0;
+    }
+
+    ul {
+      list-style: none;
+      font-size: 12px;
+      padding: 0;
+
+    }
+
+    li {
+      position: relative;
+      display: inline-block;
+      border-left: 1px solid #3774ce;
+
+    }
+
+    li:last-child {
+      border-right: 1px solid #3774ce;
+      padding: 10px;
+    }
+
+    li[data-tip]::before {
+      content: attr(data-tip);
+      /* 取出伪元素自身的父元素的某个属性的值 */
+      position: absolute;
+      background-color: #ff8e00;
+      font-size: 8px;
+      left: 30px;
+      bottom: 20px;
+      white-space: nowrap;
+      z-index: 10;
+      padding: 2px;
+
+    }
+
+    li[data-tip]::after {
+      content: '';
+      position: absolute;
+      border: 2px solid #ff8e00;
+      border-color: #ff8e00 transparent transparent #ff8e00;
+      left: 38px;
+      bottom: 16px;
+      z-index: 10;
+    }
+  </style>
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <nav>
+        <ul>
+          <li>首页</li>
+          <li>海外酒店</li>
+          <li data-tip="低价促">火车票</li>
+          <li data-tip="新升级">汽车票</li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+
+  </html>
+</body>
+
+</html>
