@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    main {
+      border: 5px solid orange;
+      overflow: hidden;
+      width: 510px;
+      position: relative;
+      height: 332px;
+      box-sizing: border-box;
+      margin: auto;
+    }
+
+    div.wrap {
+      font-size: 0;
+      width: 2000px;
+      left: 0;
+      top: 0;
+      position: absolute;
+      transition: .8s;
+
+    }
+
+    input {
+      position: relative;
+      top: calc(100% - 30px);
+      z-index: 10;
+    }
+
+    #a:checked+div {
+      left: 0%;
+    }
+
+    #b:checked~div {
+      left: -100%;
+    }
+
+    #c:checked~div {
+      left: -200%;
+    }
+
+    #d:checked~div {
+      left: -300%;
+    }
+
+    input.arrow {
+      display: none;
+    }
+
+    .arrow~label::before {
+      content: '';
+      width: 33px;
+      height: 33px;
+      display: block;
+      border-top: 10px solid grey;
+      border-right: 10px solid grey;
+      transform: rotate(-135deg);
+
+
+      transition: .3s;
+      position: absolute;
+      left: 6px;
+    }
+
+    #a:checked~.arrow~label::before,
+    #b:checked~.arrow label::before,
+    #c:checked~.arrow label::before,
+    #d:checked~.arrow label::before {
+      display: inline-block;
+      position: absolute;
+      right: 100%;
+    }
+
+    table {
+      border: 4px solid;
+      width: 165px;
+      height: 165px;
+      border-collapse: collapse;
+
+
+      color: green;
+      border-color: blue;
+      box-sizing: border-box;
+    }
+
+    tr,
+    td {
+      border: 4px solid;
+      border-color: blue;
+    }
+
+    tr {
+      text-align: center;
+    }
+
+    td {
+      position: relative;
+      vertical-align: middle;
+      margin-top: -4px;
+      margin-bottom: 10px;
+      margin-left: -4px;
+      margin-right: -px;
+    }
+
+    td:hover {
+      border-color: red;
+
+    }
+
+    td:hover {
+      border-color: red;
+      border-left-color: red;
+
+      position: absolute;
+      padding: 12px 18px;
+      padding-right: 21px;
+      padding-bottom: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <main><input type="radio" name="cat" id="a" checked>
+    <input type="radio" name="cat" id="b">
+    <input type="radio" name="cat" id="c">
+    <input type="radio" name="cat" id="d">
+    <div class="wrap">
+      <img
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575460549366&di=fba2701274b52dd3f70fdddab6f35e1c&imgtype=0&src=http%3A%2F%2Fimages6.fanpop.com%2Fimage%2Fphotos%2F37000000%2Fcute-cat-animals-37001308-500-322.jpg"
+        alt="">
+      <img
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575460538884&di=d200ff5b71b4c4acfd5eba64fbd48095&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20180708%2Fe605be175cd14e73965375fb26710774.jpeg"
+        alt="">
+      <img
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575460505295&di=4879694ab07a3d6e3b787fc49138e36b&imgtype=0&src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fq_70%2Cc_zoom%2Cw_640%2Fimages%2F20190313%2Fd828e081284e42cf9af30fc951b18969.jpeg"
+        alt="">
+      <img
+        src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575460497710&di=2ab6fc809064b8fac456c63dd3913254&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D2990630678%2C2630533822%26fm%3D214%26gp%3D0.jpg"
+        alt="">
+    </div>
+    <input type="checkbox" class="arrow">
+    <label for="a"></label>
+    <label for="b"></label>
+    <label for="c"></label>
+    <label for="d"></label>
+  </main>
+  <table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
+</body>
+
+</html>
