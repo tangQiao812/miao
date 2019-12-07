@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      /* background-color: rgba(0,0,0,0.1); */
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif
+    }
+
+    .container {
+      background-color: #333;
+      height: 40px;
+      font-size: 12px;
+      height: 40px;
+      line-height: 40px;
+      position: relative;
+    }
+
+    .wrap {
+      height: 40px;
+      background-color: #333;
+      width: 1226px;
+      margin: 0 auto;
+    }
+
+    .top-list {
+      height: 40px;
+      line-height: 40px;
+      float: left;
+    }
+
+    .container a {
+      color: #b0b0b0;
+      text-decoration: none;
+    }
+
+    .top-list span,
+    .top-list-r {
+      color: #424242;
+      margin: 0 2px;
+      font-size: 12px;
+    }
+
+    .container a:hover {
+      color: #fff;
+    }
+
+    .top-list-r {
+      float: right;
+    }
+
+    .shop {
+      display: inline-block;
+      width: 120px;
+      height: 40px;
+      background-color: #424242;
+      color: #b0b0b0;
+      text-align: center;
+      position: relative;
+      box-sizing: border-box;
+
+    }
+
+    .shop::after {
+      content: '';
+      width: 320px;
+      background-image: url(images/shop.png);
+      height: 90px;
+      position: absolute;
+      opacity: 0;
+      left: -630px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      top: 40px;
+      left: -200px;
+    }
+
+    .shop:hover {
+      color: #ff6819;
+      background-color: #fff;
+    }
+
+    .shop:hover::after {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrap">
+      <div class="top-list">
+        <a href="#">小米商城</a>
+        <span>|</span>
+        <a href="#">MIUI</a>
+        <span>|</span>
+        <a href="#">IoT</a>
+        <span>|</span>
+        <a href="#">云服务</a>
+        <span>|</span>
+        <a href="#">金融</a>
+        <span>|</span>
+        <a href="#">有品</a>
+        <span>|</span>
+        <a href="#">小爱开放平台</a>
+        <span>|</span>
+        <a href="#">企业团购</a>
+        <span>|</span>
+        <a href="#">资质证照</a>
+        <span>|</span>
+        <a href="#">协议规则</a>
+        <span>|</span>
+        <a href="#">协议规则</a>
+        <span>|</span>
+        <a href="#">Select Location</a>
+      </div>
+      <div class="top-list-r">
+        <a href="#">登陆</a>
+        <span>|</span>
+        <a href="#">注册</a>
+        <span>|</span>
+        <a href="#">消息通知</a>
+        <div class="shop">购物车（0）</div>
+      </div>
+
+    </div>
+
+
+  </div>
+</body>
+
+</html>

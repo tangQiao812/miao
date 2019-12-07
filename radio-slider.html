@@ -60,66 +60,20 @@
       border-top: 10px solid grey;
       border-right: 10px solid grey;
       transform: rotate(-135deg);
-
-
       transition: .3s;
       position: absolute;
       left: 6px;
     }
 
-    #a:checked~.arrow~label::before,
-    #b:checked~.arrow label::before,
-    #c:checked~.arrow label::before,
-    #d:checked~.arrow label::before {
+    .left>label {
       display: inline-block;
-      position: absolute;
-      right: 100%;
-    }
-
-    table {
-      border: 4px solid;
-      width: 165px;
-      height: 165px;
-      border-collapse: collapse;
-
-
-      color: green;
-      border-color: blue;
-      box-sizing: border-box;
-    }
-
-    tr,
-    td {
-      border: 4px solid;
-      border-color: blue;
-    }
-
-    tr {
-      text-align: center;
-    }
-
-    td {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: red;
+      xborder: 1px solid black;
       position: relative;
-      vertical-align: middle;
-      margin-top: -4px;
-      margin-bottom: 10px;
-      margin-left: -4px;
-      margin-right: -px;
-    }
-
-    td:hover {
-      border-color: red;
-
-    }
-
-    td:hover {
-      border-color: red;
-      border-left-color: red;
-
-      position: absolute;
-      padding: 12px 18px;
-      padding-right: 21px;
-      padding-bottom: 16px;
+      z-index: 100;
     }
   </style>
 </head>
@@ -143,11 +97,19 @@
         src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575460497710&di=2ab6fc809064b8fac456c63dd3913254&imgtype=jpg&src=http%3A%2F%2Fimg3.imgtn.bdimg.com%2Fit%2Fu%3D2990630678%2C2630533822%26fm%3D214%26gp%3D0.jpg"
         alt="">
     </div>
-    <input type="checkbox" class="arrow">
-    <label for="a"></label>
-    <label for="b"></label>
-    <label for="c"></label>
-    <label for="d"></label>
+    <div class="left">
+      <!--让左右两边四个按键与radio的input相关联，input控制图片的切换。点击这是四个label键等于点击input，故可以设置input：checked状态来关联这两边各四个按键的位置 -->
+      <label for="a"></label>
+      <label for="b"></label>
+      <label for="c"></label>
+      <label for="d"></label>
+    </div>
+    <div class="right">
+      <label for="a"></label>
+      <label for="b"></label>
+      <label for="c"></label>
+      <label for="d"></label>
+    </div>
   </main>
 
 </body>
