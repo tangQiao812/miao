@@ -68,7 +68,7 @@
       text-align: center;
       position: relative;
       box-sizing: border-box;
-
+      margin-right: -2px;
     }
 
     .shop::after {
@@ -83,6 +83,7 @@
       background-size: contain;
       top: 40px;
       left: -200px;
+      z-index: 15;
     }
 
     .shop:hover {
@@ -92,6 +93,186 @@
 
     .shop:hover::after {
       opacity: 1;
+    }
+
+    #banner {
+      overflow: hidden;
+      position: relative;
+      margin: 0 auto;
+      width: 1226px;
+    }
+
+    .wrap-image {
+      width: 6130px;
+      height: 460px;
+      position: relative;
+      font-size: 0;
+      transition: 0.7s;
+    }
+
+    .wrap-image img {
+      display: inline-block;
+      width: 1226px;
+    }
+
+    #pic1:checked~.wrap-image {
+      left: 0;
+    }
+
+    #pic2:checked~.wrap-image {
+      left: -1226px;
+    }
+
+    #pic3:checked~.wrap-image {
+      left: -2452px;
+    }
+
+    #pic4:checked~.wrap-image {
+      left: -3678px;
+    }
+
+    #pic5:checked~.wrap-image {
+      left: -4904px;
+    }
+
+    input {
+      display: none;
+    }
+
+    .page label {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      border: 2px solid #b8afaf;
+      margin: 8px;
+      position: relative;
+    }
+
+    .page {
+      position: absolute;
+      right: 34px;
+      bottom: 25px;
+      z-index: 10;
+    }
+
+    .page>label::after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: currentColor;
+      opacity: 0.5;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      margin-right: 10px;
+      transition: .4s;
+    }
+
+
+    .page>label:hover::after {
+      background-color: white;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+
+    .left label,
+    .right label {
+      display: none;
+      width: 40px;
+      height: 70px;
+      background-color: currentColor;
+      opacity: 0.5;
+    }
+
+    .left label:hover,
+    .right label:hover {
+      cursor: pointer;
+    }
+
+    #pic1:checked~.left label:nth-of-type(5),
+    #pic2:checked~.left label:nth-of-type(1),
+    #pic3:checked~.left label:nth-of-type(2),
+    #pic4:checked~.left label:nth-of-type(3),
+    #pic5:checked~.left label:nth-of-type(4) {
+      display: inline-block;
+      position: absolute;
+      left: 234px;
+      top: 194px;
+    }
+
+    #pic1:checked~.right label:nth-of-type(2),
+    #pic2:checked~.right label:nth-of-type(3),
+    #pic3:checked~.right label:nth-of-type(4),
+    #pic4:checked~.right label:nth-of-type(5),
+    #pic5:checked~.right label:nth-of-type(1) {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 194px;
+    }
+
+    /* .lr-tab .left label {
+      position: absolute;
+      left: 234px;
+      top: 194px;
+    } */
+
+    /* .lr-tab .right label {
+      position: absolute;
+      right: 0;
+      top: 194px;
+    } */
+
+    .left label::after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-top: 2px solid #d4d9d8;
+      border-right: 2px solid #d4d9d8;
+      transform: rotate(-135deg);
+      position: absolute;
+      left: 15px;
+      top: 26px;
+    }
+
+    .right label::after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-top: 2px solid #d4d9d8;
+      border-left: 2px solid #d4d9d8;
+      transform: rotate(135deg);
+      position: absolute;
+      right: 15px;
+      top: 26px;
+    }
+
+    div.aside {
+      width: 234px;
+      height: 460px;
+      position: absolute;
+      z-index: 20;
+      background-color: #3f3d3d;
+
+    }
+
+    .aside ul.as {
+      padding: 20px 0;
+    }
+
+    .aside .as li {
+      width: 234px;
+      height: 40px;
+      padding: 0 0 0 30px;
+      color: white;
+    }
+
+    li table {
+      display: none;
     }
   </style>
 </head>
@@ -135,6 +316,95 @@
 
     </div>
 
+
+  </div>
+  <div id="banner">
+    <div class="aside">
+      <ul class="as">
+        <li>手机 电话卡
+          <table>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>2</td>
+              <td>3</td>
+
+            </tr>
+          </table>
+        </li>
+        <li>电视 盒子</li>
+        <li>笔记本 显示器 平板</li>
+        <li>家电 插线板</li>
+        <li>出行 穿戴</li>
+        <li>智能 路由器</li>
+        <li>电源 配件</li>
+        <li>健康 儿童</li>
+        <li>耳机 音箱</li>
+        <li>生活 箱包</li>
+      </ul>
+    </div>
+    <input type="radio" name="radio" id="pic1" checked>
+    <input type="radio" name="radio" id="pic2">
+    <input type="radio" name="radio" id="pic3">
+    <input type="radio" name="radio" id="pic4">
+    <input type="radio" name="radio" id="pic5">
+    <div class="page">
+      <label for="pic1"></label>
+      <label for="pic2"></label>
+      <label for="pic3"></label>
+      <label for="pic4"></label>
+      <label for="pic5"></label>
+    </div>
+    <div class="wrap-image">
+      <img src="images/pic1.jpg" alt="">
+      <img src="images/pic2.jpeg" alt="">
+      <img src="images/pic3.jpg" alt="">
+      <img src="images/pic4.jpg" alt="">
+      <img src="images/pic5.jpg" alt="">
+    </div>
+    <div class="left">
+      <label for="pic1"></label>
+      <label for="pic2"></label>
+      <label for="pic3"></label>
+      <label for="pic4"></label>
+      <label for="pic5"></label>
+    </div>
+    <div class="right">
+      <label for="pic1"></label>
+      <label for="pic2"></label>
+      <label for="pic3"></label>
+      <label for="pic4"></label>
+      <label for="pic5"></label>
+    </div>
+  </div>
 
   </div>
 </body>
