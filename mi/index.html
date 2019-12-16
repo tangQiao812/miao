@@ -14,7 +14,8 @@
     }
 
     body {
-      font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif
+      overflow-y: scroll;
+      font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
     }
 
     .container {
@@ -43,18 +44,28 @@
 
     /* .down-wrap {
       width: 124px;
-      height: 148px;
+
       position: absolute;
       left: 441px;
       top: 40px;
       z-index: 10;
-
+      height: 0;
       margin: 0;
       background-color: #fff;
 
     }
 
-    .down-wrap img {
+    .top-list {
+      overflow: hidden;
+      transition: .3s;
+
+    }
+
+    .top-list a:nth-child(20):hover .down-wrap {
+      height: 148px;
+    }
+
+    .top-list:hover .down-wrap::after .down-wrap img {
       margin: 20px 17px 0;
     }
 
@@ -66,34 +77,93 @@
       width: 90px;
       font-size: 14px;
     }
-    }
 
     .down-wrap::after {
       content: '';
-      width: 9px;
-      height: 9px;
+      width: 12px;
+      height: 12px;
       position: absolute;
-      z-index: 20;
-      left: 63px;
-      top: 12px;
-      border: 2px solid;
+      z-index: -1;
+      left: 55px;
+      top: -6px;
+      box-shadow: 0 0 10px;
       transform: rotate(45deg);
       background: #fff;
       border-right-color: transparent;
       border-bottom-color: transparent;
-
+      visibility: hidden;
     } */
+
+    .down-wrap {
+      width: 124px;
+      position: absolute;
+      left: 517px;
+      top: 40px;
+      z-index: 10;
+      height: 0;
+      margin: 0;
+      background-color: #fff;
+      overflow: hidden;
+      transition: .4s;
+      box-shadow: 0 0 6px;
+    }
+
+
+    .top-list {
+      /* overflow: hidden; */
+      transition: .3s;
+
+    }
+
+    .top-list a:nth-child(21):hover .down-wrap {
+      height: 148px;
+    }
+
+    .top-list a:nth-child(21):hover::after {
+      visibility: visible;
+    }
+
+    .down-wrap img {
+      margin: 20px 17px 0;
+    }
+
+
+
+    .top-list a:nth-child(21)::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      z-index: 1;
+      left: 574px;
+      top: 34px;
+      box-shadow: 0 0 10px;
+      transform: rotate(45deg);
+      background: #fff;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      visibility: hidden;
+      transition: .3s;
+    }
 
     .container a {
       color: #b0b0b0;
       text-decoration: none;
     }
 
-    .top-list span,
-      {
+    .top-list span {
       color: #424242;
       margin: 0 3.6px;
       font-size: 12px;
+    }
+
+    .down-wrap span {
+      display: block;
+      color: #333;
+      margin: auto;
+      margin-top: -15px;
+      width: 90px;
+      font-size: 14px;
     }
 
     .top-list-r a {
@@ -408,10 +478,12 @@
     }
 
     .hlogo {
+
       float: left;
       padding-top: 20px;
       position: relative;
       font-size: 0;
+
     }
 
     .hlogo img {
@@ -466,27 +538,32 @@
       color: #333;
     }
 
+    a.hlink {
+      display: block;
+    }
+
     a.hlink:hover {
       color: #ff6819;
+
+    }
+
+    .hnav>li:hover .xiala {
+      height: 230px;
+    }
+
+    .hnav>li:hover .xiala .con .xnav-item {
       display: block;
     }
 
-    a.hlink:hover~.xiala {
-      display: block;
-    }
-
-    .xiala:hover {
-      display: block;
-    }
 
     .xiala {
       position: absolute;
-      height: 230px;
+      height: 0;
       width: 100vw;
       background-color: #fff;
       z-index: 20;
       left: -160px;
-      display: none;
+      transition: .3s;
     }
 
 
@@ -505,7 +582,8 @@
       height: 200px;
       padding: 35px 12px 0;
       text-align: center;
-
+      display: none;
+      transition: .3s;
     }
 
     span.xtext {
@@ -597,9 +675,10 @@
         <span>|</span>
         <a href="#">协议规则</a>
         <span>|</span>
-        <a href="#">下载app</a>
-        <!-- <div class="down-wrap"><img src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" width="90px"
-            alt=""><span>小米商城APP</span></div> -->
+        <a href="#">下载app
+          <div class="down-wrap"><img src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" width="90px"
+              alt=""><span>小米商城APP</span></div>
+        </a>
         <span>|</span>
         <a href="#">Select Location</a>
       </div>

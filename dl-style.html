@@ -1,52 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
   <style>
     dt {
-      position: relative;
-
+      float: left;
+      width: 50px;
+      text-align: right;
+      clear: both;
     }
 
-    dl dt:first-child~dd {
-      display: inline-block;
-      margin-left: px;
-      margin-right: px;
-      margin-top: px;
-      margin-bottom: px;
-      position: absolute;
-      left: 10px;
-      top: 10px
+    dd {
+      display: inline;
+      margin-left: 0;
+      float: left;
     }
+
+    /* ============第二种============= */
+    /* dt {
+  width: 50px;
+  text-align: right;
+}
+dt::after {
+  content:':';
+}
+dt:not(first-child) {
+  margin-top: -21px;
+}
+dd {
+  display: inline-block;
+  margin-left: 0;
+  vertical-align:top;
+
+  margin-top: -21px;    /* dd行框在匿名文本处 */
+    /* }
+dd::after {
+content:'';
+
+}
+dt+dd {
+  margin-left: 50px;
+
+}
+dl::after {
+  content:'1';
+  display: block;
+  margin-top: -21px;
+  font-size:0;
+  height: 0;
+} */
   </style>
 </head>
 
 <body>
   <dl>
-    <dt>Name</dt>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dd>123</dd>
-    <dt>Born</dt>
-    <dd>1952</dd>
-    <dt>Birthplace</dt>
-    <dd>Japan</dd>
-    <dt>Color</dt>
-    <dd>Green</dd>
+    <dt>tttt</dt>
+    <dd>Lorem ipsum dolor.</dd>
+    <dd>aaa</dd>
+    <dd>bbb</dd>
+    <dd>ccc</dd>
+    <dt>yyy </dt>
+    <dd>Lorem ipsum dolor.</dd>
+    <dd>aaa</dd>
+    <dd>bbb</dd>
+    <dd>ccc</dd>
+    <dt>uuu </dt>
+    <dd>Lorem ipsum dolor.</dd>
+    <dd>aaa</dd>
+    <dd>bbb</dd>
+    <dd>ccc</dd>
   </dl>
 </body>
 
