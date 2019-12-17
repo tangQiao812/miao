@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .hero {
+      height: 780px;
+    }
+
+    .hero-content {
+      max-width: 1040px;
+      margin: auto;
+      height: 100%;
+    }
+
+    ul {
+      margin-top: 8px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      margin-left: -4px;
+      margin-right: -4px;
+    }
+
+    li {
+      box-sizing: border-box;
+      background-color: violet;
+      border: 4px solid white;
+      height: 260px;
+      width: 25%;
+      float: left;
+    }
+
+    @media (max-width: 1080px) {
+      .hero {
+        height: 625px;
+      }
+
+      li {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      li {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div class="hero"></div>
+    <div style="overflow:hedden;">
+      <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -2,1500 +2,1399 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <style>
-    * {
-      /* background-color: rgba(0,0,0,0.1); */
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      overflow-y: scroll;
-      font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
-    }
-
-    .container {
-      background-color: #333;
-      height: 40px;
-      font-size: 12px;
-      height: 40px;
-      line-height: 40px;
-      position: relative;
-
-    }
-
-    .wrap {
-      height: 40px;
-      background-color: #333;
-      width: 1226px;
-      margin: 0 auto;
-    }
-
-    .top-list {
-      height: 40px;
-      line-height: 40px;
-      float: left;
-      position: relative;
-    }
-
-    /* .down-wrap {
-      width: 124px;
-
-      position: absolute;
-      left: 441px;
-      top: 40px;
-      z-index: 10;
-      height: 0;
-      margin: 0;
-      background-color: #fff;
-
-    }
-
-    .top-list {
-      overflow: hidden;
-      transition: .3s;
-
-    }
-
-    .top-list a:nth-child(20):hover .down-wrap {
-      height: 148px;
-    }
-
-    .top-list:hover .down-wrap::after .down-wrap img {
-      margin: 20px 17px 0;
-    }
-
-    .down-wrap span {
-      display: block;
-      color: #333;
-      margin: auto;
-      margin-top: -15px;
-      width: 90px;
-      font-size: 14px;
-    }
-
-    .down-wrap::after {
-      content: '';
-      width: 12px;
-      height: 12px;
-      position: absolute;
-      z-index: -1;
-      left: 55px;
-      top: -6px;
-      box-shadow: 0 0 10px;
-      transform: rotate(45deg);
-      background: #fff;
-      border-right-color: transparent;
-      border-bottom-color: transparent;
-      visibility: hidden;
-    } */
-
-    .down-wrap {
-      width: 124px;
-      position: absolute;
-      left: 517px;
-      top: 40px;
-      z-index: 10;
-      height: 0;
-      margin: 0;
-      background-color: #fff;
-      overflow: hidden;
-      transition: .4s;
-      box-shadow: 0 0 6px;
-    }
-
-
-    .top-list {
-      /* overflow: hidden; */
-      transition: .3s;
-
-    }
-
-    .top-list a:nth-child(21):hover .down-wrap {
-      height: 148px;
-    }
-
-    .top-list a:nth-child(21):hover::after {
-      visibility: visible;
-    }
-
-    .down-wrap img {
-      margin: 20px 17px 0;
-    }
-
-
-
-    .top-list a:nth-child(21)::after {
-      content: '';
-      width: 12px;
-      height: 12px;
-      position: absolute;
-      z-index: 1;
-      left: 574px;
-      top: 34px;
-      box-shadow: 0 0 10px;
-      transform: rotate(45deg);
-      background: #fff;
-      border-right-color: transparent;
-      border-bottom-color: transparent;
-      visibility: hidden;
-      transition: .3s;
-    }
-
-    .container a {
-      color: #b0b0b0;
-      text-decoration: none;
-    }
-
-    .top-list span {
-      color: #424242;
-      margin: 0 3.6px;
-      font-size: 12px;
-    }
-
-    .down-wrap span {
-      display: block;
-      color: #333;
-      margin: auto;
-      margin-top: -15px;
-      width: 90px;
-      font-size: 14px;
-    }
-
-    .top-list-r a {
-      margin: 0 5px;
-    }
-
-    .container a:hover {
-      color: #fff;
-    }
-
-    .top-list-r {
-      float: right;
-    }
-
-    .shop {
-      display: inline-block;
-      width: 120px;
-      height: 40px;
-      background-color: #424242;
-      color: #b0b0b0;
-      text-align: center;
-      position: relative;
-      box-sizing: border-box;
-      margin-right: -2px;
-      cursor: pointer;
-    }
-
-    /* 购物车 */
-    .shop {
-      position: relative;
-      margin-left: 15px;
-    }
-
-    .empty {
-      width: 316px;
-      height: 100px;
-      background-color: #fff;
-      position: absolute;
-      color: #333;
-      box-sizing: border-box;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
-      display: none;
-      text-align: center;
-      line-height: 100px;
-      right: 0;
-      top: 40px;
-      z-index: 15;
-      transition: display 1s;
-    }
-
-    .shop:hover {
-      color: #ff6819;
-
-    }
-
-    .shop:hover .empty {
-      display: block;
-      cursor: default;
-    }
-
-
-
-    /* 轮播图部分 */
-    #banner {
-      overflow: hidden;
-      position: relative;
-      margin: 0 auto;
-      width: 1226px;
-    }
-
-    .wrap-image {
-      width: 6130px;
-      height: 460px;
-      position: relative;
-      font-size: 0;
-      transition: 0.7s;
-    }
-
-    .wrap-image img {
-      display: inline-block;
-      width: 1226px;
-    }
-
-    /* radio选择图片 */
-    #pic1:checked~.wrap-image {
-      left: 0;
-    }
-
-    #pic2:checked~.wrap-image {
-      left: -1226px;
-    }
-
-    #pic3:checked~.wrap-image {
-      left: -2452px;
-    }
-
-    #pic4:checked~.wrap-image {
-      left: -3678px;
-    }
-
-    #pic5:checked~.wrap-image {
-      left: -4904px;
-    }
-
-    #banner input {
-      display: none;
-    }
-
-    .page label {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      box-sizing: border-box;
-      border: 2px solid #b8afaf;
-      margin: 8px;
-      position: relative;
-    }
-
-    .page {
-      position: absolute;
-      right: 34px;
-      bottom: 25px;
-      z-index: 10;
-    }
-
-    .page>label::after {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: currentColor;
-      opacity: 0.5;
-      position: absolute;
-      left: 0px;
-      top: 0px;
-      margin-right: 10px;
-      transition: .4s;
-    }
-
-
-    .page>label:hover::after {
-      background-color: white;
-      opacity: 0.5;
-      cursor: pointer;
-    }
-
-    .left label,
-    .right label {
-      display: none;
-      width: 40px;
-      height: 70px;
-      background-color: currentColor;
-      opacity: 0.5;
-    }
-
-    .left label:hover,
-    .right label:hover {
-      cursor: pointer;
-    }
-
-    #pic1:checked~.left label:nth-of-type(5),
-    #pic2:checked~.left label:nth-of-type(1),
-    #pic3:checked~.left label:nth-of-type(2),
-    #pic4:checked~.left label:nth-of-type(3),
-    #pic5:checked~.left label:nth-of-type(4) {
-      display: inline-block;
-      position: absolute;
-      left: 234px;
-      top: 194px;
-    }
-
-    #pic1:checked~.right label:nth-of-type(2),
-    #pic2:checked~.right label:nth-of-type(3),
-    #pic3:checked~.right label:nth-of-type(4),
-    #pic4:checked~.right label:nth-of-type(5),
-    #pic5:checked~.right label:nth-of-type(1) {
-      display: inline-block;
-      position: absolute;
-      right: 0;
-      top: 194px;
-    }
-
-    /* .lr-tab .left label {
-      position: absolute;
-      left: 234px;
-      top: 194px;
-    } */
-
-    /* .lr-tab .right label {
-      position: absolute;
-      right: 0;
-      top: 194px;
-    } */
-
-    .left label::after {
-      content: '';
-      width: 16px;
-      height: 16px;
-      border-top: 2px solid #d4d9d8;
-      border-right: 2px solid #d4d9d8;
-      transform: rotate(-135deg);
-      position: absolute;
-      left: 15px;
-      top: 26px;
-    }
-
-    .right label::after {
-      content: '';
-      width: 16px;
-      height: 16px;
-      border-top: 2px solid #d4d9d8;
-      border-left: 2px solid #d4d9d8;
-      transform: rotate(135deg);
-      position: absolute;
-      right: 15px;
-      top: 26px;
-    }
-
-    /* 侧边栏二级导航 */
-    div.aside {
-      width: 234px;
-      height: 460px;
-      position: absolute;
-      background-color: rgba(0, 0, 0, .4);
-      z-index: 10;
-    }
-
-    .nav-list {
-      padding: 20px 0;
-      width: 234px;
-      height: 420px;
-      list-style: none;
-      position: relative;
-    }
-
-    .nav-item {
-      height: 42px;
-
-      width: 100%;
-
-
-    }
-
-    .item-link {
-      text-decoration: none;
-      color: #fff;
-      display: block;
-      height: 42px;
-      line-height: 42px;
-      text-indent: 30px;
-    }
-
-    .nav-item:hover {
-      background-color: #ff6819;
-    }
-
-    .nav-item:hover .show-production {
-      display: block;
-      box-shadow: 0 5px 30px #c5c5c5;
-      z-index: 100;
-    }
-
-    .show-production {
-      height: 460px;
-      width: 992px;
-      background-color: #eee;
-      position: absolute;
-      left: 234px;
-      top: 0;
-      display: none;
-
-    }
-
-    .show-second img {
-      height: 35px;
-      padding: 0;
-      float: left;
-    }
-
-    span.text {
-      vertical-align: -10px;
-    }
-
-    .show-second {
-      width: 150px;
-      height: 76px;
-      list-style: none;
-      display: inline-block;
-      margin-top: 25px;
-      margin-left: 25px;
-      margin-bottom: -24px;
-      padding: 0;
-      padding-right: 70px;
-
-
-    }
-
-    .show-second a {
-      color: #333;
-      text-decoration: none;
-    }
-
-
-    #header {
-      width: 1226px;
-      margin: 0 auto;
-      height: 100px;
-      background-color: white;
-      position: relative;
-    }
-
-    .hlogo {
-
-      float: left;
-      padding-top: 20px;
-      position: relative;
-      font-size: 0;
-
-    }
-
-    .hlogo img {
-      width: 54px;
-    }
-
-    .hlogo::before {
-      content: '';
-      overflow: hidden;
-      width: 55px;
-      height: 55px;
-      background-image: url(images/houselogo.png);
-      position: absolute;
-      background-size: contain;
-      right: 55px;
-      top: 20px;
-      background-repeat: no-repeat;
-      opacity: 0;
-    }
-
-    .hlogo:hover::before {
-      opacity: 1;
-      right: 0;
-      transition: .2s;
-    }
-
-
-
-
-    /* 头部导航 */
-
-    .hnav {
-      float: left;
-      list-style: none;
-      padding-left: 188px;
-      /* text-align: center; */
-      line-height: 100px;
-      position: relative;
-    }
-
-    .hnav>li {
-      float: left;
-      margin-right: 20px;
-      font-size: 16px;
-      xposition: relative;
-
-    }
-
-    .hnav a {
-      text-decoration: none;
-      cursor: pointer;
-      color: #333;
-    }
-
-    a.hlink {
-      display: block;
-    }
-
-    a.hlink:hover {
-      color: #ff6819;
-
-    }
-
-    .hnav>li:hover .xiala {
-      height: 230px;
-    }
-
-    .hnav>li:hover .xiala .con .xnav-item {
-      display: block;
-    }
-
-
-    .xiala {
-      position: absolute;
-      height: 0;
-      width: 100vw;
-      background-color: #fff;
-      z-index: 20;
-      left: -160px;
-      transition: .3s;
-    }
-
-
-    .con {
-      width: 1226px;
-      margin-right: auto;
-      margin-left: auto;
-
-    }
-
-    .xnav-item {
-      list-style: none;
-      position: relative;
-      float: left;
-      width: 180px;
-      height: 200px;
-      padding: 35px 12px 0;
-      text-align: center;
-      display: none;
-      transition: .3s;
-    }
-
-    span.xtext {
-      display: block;
-      padding: 0;
-      margin: 0;
-      position: absolute;
-      top: 120px;
-      left: 94px;
-      font-size: 12px;
-    }
-
-
-
-
-
-    /* header部分input */
-    #header input {
-      display: inline-block;
-      box-sizing: border-box;
-    }
-
-    .t {
-      position: absolute;
-      outline: none;
-      width: 245px;
-      height: 50px;
-      border: 1px solid #e0e0e0;
-      border-right-width: 0;
-      right: 50px;
-      top: 24px;
-    }
-
-
-    .i {
-      width: 50px;
-      height: 50px;
-      background-color: #fff;
-      background-image: url(images/submit.png);
-      background-size: contain;
-      position: absolute;
-      right: 0;
-      top: 24px;
-      border: 1px solid #e0e0e0;
-      cursor: pointer;
-    }
-
-    .i:hover {
-      background-image: url(images/submit2.png);
-    }
-
-    .i:hover+input {
-      border-color: #b0b0b0;
-    }
-
-    .rs:hover .t {
-      border-right-width: 1px;
-      border-color: #b0b0b0;
-    }
-
-    .rs:hover .i {
-      border-color: #b0b0b0;
-      border-left-width: 0;
-    }
-  </style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+      <style>
+            * {
+                  /* background-color: rgba(0,0,0,0.1); */
+                  margin: 0;
+                  padding: 0;
+            }
+
+
+
+            body {
+                  overflow-y: scroll;
+                  font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+            }
+
+            .container {
+                  background-color: #333;
+                  height: 40px;
+                  font-size: 12px;
+                  height: 40px;
+                  line-height: 40px;
+                  position: relative;
+
+            }
+
+            .wrap {
+                  height: 40px;
+                  background-color: #333;
+                  width: 1226px;
+                  margin: 0 auto;
+            }
+
+            .top-list {
+                  height: 40px;
+                  line-height: 40px;
+                  float: left;
+                  position: relative;
+            }
+
+            .down-wrap {
+                  width: 124px;
+                  position: absolute;
+                  left: 517px;
+                  top: 40px;
+                  z-index: 10;
+                  height: 0;
+                  margin: 0;
+                  background-color: #fff;
+                  overflow: hidden;
+                  transition: .4s;
+                  box-shadow: 0 0 6px;
+            }
+
+
+            .top-list {
+                  /* overflow: hidden; */
+                  transition: .3s;
+
+            }
+
+            .top-list a:nth-child(21):hover .down-wrap {
+                  height: 148px;
+            }
+
+            .top-list a:nth-child(21):hover::after {
+                  visibility: visible;
+            }
+
+            .down-wrap img {
+                  margin: 20px 17px 0;
+            }
+
+
+
+            .top-list a:nth-child(21)::after {
+                  content: '';
+                  width: 12px;
+                  height: 12px;
+                  position: absolute;
+                  z-index: 1;
+                  left: 574px;
+                  top: 34px;
+                  box-shadow: 0 0 10px;
+                  transform: rotate(45deg);
+                  background: #fff;
+                  border-right-color: transparent;
+                  border-bottom-color: transparent;
+                  visibility: hidden;
+                  transition: .3s;
+            }
+
+            .container a {
+
+                  text-decoration: none;
+            }
+
+            .wrap a {
+                  color: #b0b0b0;
+            }
+
+            .top-list span {
+                  color: #424242;
+                  margin: 0 3.6px;
+                  font-size: 12px;
+            }
+
+            .down-wrap span {
+                  display: block;
+                  color: #333;
+                  margin: auto;
+                  margin-top: -15px;
+                  width: 90px;
+                  font-size: 14px;
+            }
+
+            .top-list-r a {
+                  margin: 0 5px;
+            }
+
+            .container a:hover {
+                  color: #fff;
+            }
+
+            .top-list-r {
+                  float: right;
+            }
+
+            .shop {
+                  display: inline-block;
+                  width: 120px;
+                  height: 40px;
+                  background-color: #424242;
+                  color: #b0b0b0;
+                  text-align: center;
+                  position: relative;
+                  box-sizing: border-box;
+                  margin-right: -2px;
+                  cursor: pointer;
+            }
+
+            /* 购物车 */
+            .shop {
+                  position: relative;
+                  margin-left: 15px;
+            }
+
+            .empty {
+                  width: 316px;
+                  height: 0px;
+                  background-color: #fff;
+                  position: absolute;
+                  color: #333;
+                  box-sizing: border-box;
+                  box-shadow: 0 2px 10px rgba(0, 0, 0, .15);
+
+                  text-align: center;
+                  line-height: 100px;
+                  right: 0;
+                  top: 40px;
+                  z-index: 15;
+                  overflow: hidden;
+                  transition: 0.4s;
+            }
+
+            .shop:hover {
+                  color: #ff6819;
+
+            }
+
+            .shop:hover .empty {
+                  height: 100px;
+                  cursor: default;
+            }
+
+
+
+            /* 轮播图部分 */
+            #banner {
+                  overflow: hidden;
+                  position: relative;
+                  margin: 0 auto;
+                  width: 1226px;
+                  height: 460px;
+            }
+
+            .wrap-image {
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  z-index: -1;
+                  top: 0;
+                  left: 0;
+
+            }
+
+            .wrap-image img {
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+            }
+
+            .slider {
+                  position: absolute;
+                  width: 100%;
+                  height: 460px;
+                  top: 0;
+            }
+
+            .slider input {
+                  display: none;
+            }
+
+            .page {
+                  position: absolute;
+                  right: 30px;
+                  bottom: 10px;
+                  z-index: 0;
+            }
+
+            .page label {
+                  box-sizing: border-box;
+                  border: 2px solid #999;
+                  width: 10px;
+                  height: 10px;
+                  display: inline-block;
+                  background-color: rgba(0, 0, 0, .5);
+                  margin: 0 4px;
+                  border-radius: 50%;
+                  cursor: pointer;
+            }
+
+            .page label:hover {
+                  background-color: rgba(255, 255, 255, .5);
+                  border-color: rgba(0, 0, 0, .4);
+            }
+
+            .slider input:nth-child(1):checked~.page label:nth-child(1) {
+                  background-color: rgba(255, 255, 255, .5);
+                  border-color: rgba(0, 0, 0, .4);
+            }
+
+            .slider input:nth-child(2):checked~.page label:nth-child(2) {
+                  background-color: rgba(255, 255, 255, .5);
+                  border-color: rgba(0, 0, 0, .4);
+            }
+
+            .slider input:nth-child(3):checked~.page label:nth-child(3) {
+                  background-color: rgba(255, 255, 255, .5);
+                  border-color: rgba(0, 0, 0, .4);
+            }
+
+            .slider input:nth-child(4):checked~.page label:nth-child(4) {
+                  background-color: rgba(255, 255, 255, .5);
+                  border-color: rgba(0, 0, 0, .4);
+            }
+
+            .slider input:nth-child(5):checked~.page label:nth-child(5) {
+                  background-color: rgba(255, 255, 255, .5);
+                  border-color: rgba(0, 0, 0, .4);
+            }
+
+            .left label {
+                  width: 40px;
+                  height: 70px;
+                  display: inline-block;
+                  position: absolute;
+                  background-color: rgba(0 0 0 0.5);
+                  left: 234px;
+                  top: 0;
+                  bottom: 0;
+                  margin: auto;
+                  background-color: red;
+
+            }
+
+            .right label {
+                  width: 40px;
+                  height: 70px;
+                  display: inline-block;
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  bottom: 0;
+                  margin: auto;
+                  background-color: red;
+
+            }
+
+            .wrap-image img {
+                  opacity: 0;
+                  transition: .5s;
+            }
+
+            .slider input:nth-child(1):checked~.wrap-image>img:nth-child(1) {
+                  opacity: 1;
+            }
+
+            .slider input:nth-child(2):checked~.wrap-image>img:nth-child(2) {
+                  opacity: 1;
+            }
+
+            .slider input:nth-child(3):checked~.wrap-image>img:nth-child(3) {
+                  opacity: 1;
+            }
+
+            .slider input:nth-child(4):checked~.wrap-image>img:nth-child(4) {
+                  opacity: 1;
+            }
+
+            .slider input:nth-child(5):checked~.wrap-image>img:nth-child(5) {
+                  opacity: 1;
+            }
+
+            .left label:hover,
+            .right label:hover {
+                  cursor: pointer;
+            }
+
+            .left label,
+            .right label {
+                  display: none;
+                  background-color: currentcolor;
+                  opacity: 0.5;
+            }
+
+            #pic1:checked~.left label:nth-child(5),
+            #pic2:checked~.left label:nth-child(1),
+            #pic3:checked~.left label:nth-child(2),
+            #pic4:checked~.left label:nth-child(3),
+            #pic5:checked~.left label:nth-child(4) {
+                  display: block;
+
+            }
+
+            #pic1:checked~.right label:nth-child(2),
+            #pic2:checked~.right label:nth-child(3),
+            #pic3:checked~.right label:nth-child(4),
+            #pic4:checked~.right label:nth-child(5),
+            #pic5:checked~.right label:nth-child(1) {
+                  display: block;
+
+            }
+
+
+            .left label::after {
+                  content: '';
+                  width: 16px;
+                  height: 16px;
+                  border-top: 2px solid #d4d9d8;
+                  border-right: 2px solid #d4d9d8;
+                  transform: rotate(-135deg);
+                  position: absolute;
+                  left: 15px;
+                  top: 26px;
+            }
+
+            .right label::after {
+                  content: '';
+                  width: 16px;
+                  height: 16px;
+                  border-top: 2px solid #d4d9d8;
+                  border-left: 2px solid #d4d9d8;
+                  transform: rotate(135deg);
+                  position: absolute;
+                  right: 15px;
+                  top: 26px;
+            }
+
+            /* 侧边栏二级导航 */
+            div.aside {
+                  width: 234px;
+                  height: 460px;
+                  position: relative;
+                  background-color: rgba(0, 0, 0, .3);
+                  z-index: 5;
+            }
+
+            .nav-list {
+                  padding: 20px 0;
+                  width: 234px;
+                  height: 420px;
+                  list-style: none;
+
+            }
+
+            .nav-item {
+                  height: 42px;
+                  cursor: pointer;
+                  width: 100%;
+                  font-size: 0;
+            }
+
+            .item-link {
+                  text-decoration: none;
+                  color: #fff;
+                  display: block;
+                  height: 42px;
+                  line-height: 42px;
+                  text-indent: 30px;
+                  font-size: 12px;
+            }
+
+            .nav-item:hover {
+                  background-color: #ff6819;
+            }
+
+            .nav-item:hover .show-production {
+                  display: block;
+                  box-shadow: 0 5px 30px #c5c5c5;
+                  z-index: 1;
+            }
+
+
+
+            .show-production {
+                  height: 460px;
+                  width: 992px;
+                  background-color: #fff;
+                  position: absolute;
+                  left: 234px;
+                  top: 0;
+                  display: none;
+            }
+
+            .item-wrap {
+                  width: 247px;
+                  height: 100%;
+                  vertical-align: top;
+                  display: inline-block;
+            }
+
+            .show-second {
+                  width: 100%;
+                  height: 76px;
+                  box-sizing: border-box;
+                  font-size: 0;
+                  line-height: 76px;
+            }
+
+            .show-second a {
+                  display: block;
+                  color: #333;
+                  text-decoration: none;
+                  width: 100%;
+                  height: 76px;
+                  font-size: 12px;
+            }
+
+            .show-second a:hover {
+                  color: #ff6819;
+            }
+
+            .show-second a span {
+                  vertical-align: middle;
+            }
+
+            .show-second a img {
+                  vertical-align: middle;
+            }
+
+            #hwrap {
+                  height: 100px;
+                  line-height: 100px;
+                  position: relative;
+            }
+
+            #header {
+                  width: 1226px;
+                  margin: 0 auto;
+                  height: 100px;
+                  background-color: white;
+
+            }
+
+            /* header小图标滑动效果 */
+            .hlogo {
+                  display: inline-block;
+                  width: 55px;
+                  height: 55px;
+                  float: left;
+                  padding-top: 20px;
+                  position: relative;
+                  font-size: 0;
+                  overflow: hidden;
+
+            }
+
+            .hlogo img {
+                  width: 55px;
+                  height: 55px;
+                  position: absolute;
+                  left: 0;
+                  top: 22px;
+                  transition: .2s;
+            }
+
+            .hlogo:hover img {
+                  left: 55px;
+                  top: 22px;
+            }
+
+            .hlogo::before {
+                  content: '';
+
+                  width: 55px;
+                  height: 55px;
+                  background-image: url(images/houselogo.png);
+                  position: absolute;
+                  background-size: contain;
+                  right: 55px;
+                  top: 22px;
+                  background-repeat: no-repeat;
+                  opacity: 0;
+            }
+
+            .hlogo:hover::before {
+                  opacity: 1;
+                  right: 0;
+                  transition: .2s;
+            }
+
+
+
+
+            /* 头部导航及二级导航 */
+
+            .hnav {
+                  float: left;
+                  list-style: none;
+                  margin-left: 180px;
+                  /* text-align: center; */
+                  line-height: 80px;
+
+                  margin-top: 10px;
+            }
+
+            .hnav>li {
+                  display: inline-block;
+                  height: 50px;
+                  font-size: 16px;
+            }
+
+
+
+            .hnav a {
+                  text-decoration: none;
+                  cursor: pointer;
+                  color: #333;
+                  height: 60px;
+            }
+
+            a.hlink {
+                  display: inline-block;
+                  padding: 0 10px;
+            }
+
+            a.hlink:hover {
+                  color: #ff6819;
+
+            }
+
+            .hnav:hover>li .xiala {
+                  height: 230px;
+
+                  box-shadow: 0 5px 3px -5px #aaa;
+                  transition-delay: 0;
+                  border-top: 1px solid rgb(224, 224, 224);
+            }
+
+
+
+            .hnav>li:hover>.xiala {
+                  z-index: 20;
+            }
+
+
+
+
+            .xiala {
+                  position: absolute;
+                  height: 0px;
+                  width: 100%;
+                  background-color: #fff;
+                  z-index: -1;
+                  left: 0;
+                  transition: .3s;
+                  border-top: 1px solid transparent;
+                  /*边框线需从透明变色不然有黑框 */
+                  overflow: hidden;
+
+            }
+
+
+
+
+            .xnav {
+                  text-align: center;
+                  height: 230px;
+            }
+
+            .xnav-item {
+                  font-size: 0;
+                  list-style: none;
+                  display: inline-block;
+                  position: relative;
+                  width: 180px;
+                  height: 200px;
+                  padding: 30px 0px 0;
+                  margin-left: 20px;
+                  margin-right: 20px;
+                  text-align: center;
+                  z-index: 0;
+            }
+
+            .xnav-i {
+                  height: 110px;
+            }
+
+            .xtext {
+                  width: 180px;
+                  height: 30px;
+
+                  line-height: 30px;
+                  color: #333;
+                  font-size: 12px;
+            }
+
+            .price {
+                  width: 180px;
+                  height: 30px;
+                  line-height: 30px;
+                  font-size: 12px;
+                  color: #ff6819;
+
+            }
+
+            .xnav-item:hover a .xtext {
+                  color: #333;
+            }
+
+
+
+
+            /* header部分input */
+            #header input {
+                  display: inline-block;
+                  box-sizing: border-box;
+            }
+
+            .rs {
+                  float: right;
+                  margin-top: 25px;
+                  margin-bottom: 25px;
+                  line-height: 50px;
+                  height: 50px;
+
+            }
+
+            .t {
+                  outline: none;
+                  width: 245px;
+                  height: 50px;
+                  border: 1px solid #e0e0e0;
+                  border-right-width: 0;
+                  vertical-align: top;
+            }
+
+
+            .i {
+                  width: 50px;
+                  height: 50px;
+                  background-color: #fff;
+                  background-image: url(images/submit.png);
+                  background-size: contain;
+                  border: 1px solid #e0e0e0;
+                  cursor: pointer;
+                  vertical-align: middle;
+            }
+
+            .i:hover {
+                  background-image: url(images/submit2.png);
+            }
+
+            .i:hover+input {
+                  border-color: #b0b0b0;
+            }
+
+            .rs:hover .t {
+                  border-right-width: 1px;
+                  border-color: #b0b0b0;
+            }
+
+            .rs:hover .i {
+                  border-color: #b0b0b0;
+                  border-left-width: 0;
+            }
+      </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="wrap">
-      <div class="top-list">
-        <a href="#">小米商城</a>
-        <span>|</span>
-        <a href="#">MIUI</a>
-        <span>|</span>
-        <a href="#">IoT</a>
-        <span>|</span>
-        <a href="#">云服务</a>
-        <span>|</span>
-        <a href="#">金融</a>
-        <span>|</span>
-        <a href="#">有品</a>
-        <span>|</span>
-        <a href="#">小爱开放平台</a>
-        <span>|</span>
-        <a href="#">企业团购</a>
-        <span>|</span>
-        <a href="#">资质证照</a>
-        <span>|</span>
-        <a href="#">协议规则</a>
-        <span>|</span>
-        <a href="#">下载app
-          <div class="down-wrap"><img src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" width="90px"
-              alt=""><span>小米商城APP</span></div>
-        </a>
-        <span>|</span>
-        <a href="#">Select Location</a>
+      <div class="container">
+            <div class="wrap">
+                  <div class="top-list">
+                        <a href="#">小米商城</a>
+                        <span>|</span>
+                        <a href="#">MIUI</a>
+                        <span>|</span>
+                        <a href="#">IoT</a>
+                        <span>|</span>
+                        <a href="#">云服务</a>
+                        <span>|</span>
+                        <a href="#">金融</a>
+                        <span>|</span>
+                        <a href="#">有品</a>
+                        <span>|</span>
+                        <a href="#">小爱开放平台</a>
+                        <span>|</span>
+                        <a href="#">企业团购</a>
+                        <span>|</span>
+                        <a href="#">资质证照</a>
+                        <span>|</span>
+                        <a href="#">协议规则</a>
+                        <span>|</span>
+                        <a href="#">下载app
+                              <div class="down-wrap"><img src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1"
+                                          width="90px" alt=""><span>小米商城APP</span></div>
+                        </a>
+                        <span>|</span>
+                        <a href="#">Select Location</a>
+                  </div>
+                  <div class="top-list-r">
+                        <a href="#">登录</a>
+                        <span>|</span>
+                        <a href="#">注册</a>
+                        <span>|</span>
+                        <a href="#">消息通知</a>
+                        <div class="shop">购物车（0）
+                              <div class="empty">
+                                    购物车中还没有商品，赶紧选购吧！
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <div id="hwrap">
+                  <div id="header">
+                        <a href="" class="hlogo"><img src="images/logo-s.png" alt=""></a>
+                        <ul class="hnav">
+                              <li><a class="hlink" href="">小米手机</a>
+                                    <div class="xiala">
+
+                                          <ul class="xnav">
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                          </ul>
+
+                                    </div>
+                              </li>
+                              <li><a class="hlink" href="">Redmi 红米</a>
+                                    <div class="xiala">
+
+                                          <ul class="xnav">
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                          </ul>
+
+                                    </div>
+                              </li>
+                              <li><a class="hlink" href="">电视</a>
+                                    <div class="xiala">
+
+                                          <ul class="xnav">
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                          </ul>
+
+                                    </div>
+                              </li>
+                              <li><a class="hlink" href="">笔记本</a>
+                                    <div class="xiala">
+
+                                          <ul class="xnav">
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                          </ul>
+
+                                    </div>
+                              </li>
+                              <li><a class="hlink" href="">家电</a>
+                                    <div class="xiala">
+
+                                          <ul class="xnav">
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                          </ul>
+
+                                    </div>
+                              </li>
+                              <li><a class="hlink" href="">路由器</a>
+                                    <div class="xiala">
+
+                                          <ul class="xnav">
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                          </ul>
+
+                                    </div>
+                              </li>
+                              <li><a class="hlink" href="">智能硬件</a>
+                                    <div class="xiala">
+
+                                          <ul class="xnav">
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                                <li class="xnav-item">
+                                                      <a href="">
+                                                            <div class="xnav-i">
+                                                                  <img src="images/hproduct1.png" width="160px"
+                                                                        height="110px" alt="">
+                                                            </div>
+                                                            <div class="xtext">小米</div>
+                                                            <div class="price">2799元</div>
+                                                      </a>
+                                                </li>
+                                          </ul>
+
+                                    </div>
+                              </li>
+                              <li><a class="hlink" href="">服务</a>
+
+                              </li>
+                              <li><a class="hlink" href="">社区</a>
+                              </li>
+                        </ul>
+                        <div class="rs">
+                              <input type="text" class="t">
+                              <input type="submit" class="i" value="">
+                        </div>
+                  </div>
+            </div>
+            <div id="banner">
+                  <div class="aside">
+                        <ul class="nav-list">
+                              <li class="nav-item">
+                                    <a href="javascript:;" class="item-link">手机 电话卡</a>
+                                    <div class="show-production">
+                                          <ul class="item-wrap">
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                          </ul>
+                                          <ul class="item-wrap">
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                          </ul>
+                                          <ul class="item-wrap">
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                          </ul>
+                                          <ul class="item-wrap">
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                                <li class="show-second"><a href=""><img src="images/hproduct1.png"
+                                                                  width="60" height="40" alt=""><span
+                                                                  class="text">小米</span></a>
+                                                </li>
+                                          </ul>
+                                    </div>
+                              </li>
+                        </ul>
+                  </div>
+
+
+
+                  <div class="slider">
+                        <input type="radio" name="radio" id="pic1" checked>
+                        <input type="radio" name="radio" id="pic2">
+                        <input type="radio" name="radio" id="pic3">
+                        <input type="radio" name="radio" id="pic4">
+                        <input type="radio" name="radio" id="pic5">
+                        <div class="left">
+                              <label for="pic1"></label>
+                              <label for="pic2"></label>
+                              <label for="pic3"></label>
+                              <label for="pic4"></label>
+                              <label for="pic5"></label>
+                        </div>
+                        <div class="right">
+                              <label for="pic1"></label>
+                              <label for="pic2"></label>
+                              <label for="pic3"></label>
+                              <label for="pic4"></label>
+                              <label for="pic5"></label>
+                        </div>
+                        <div class="page">
+                              <label for="pic1"></label>
+                              <label for="pic2"></label>
+                              <label for="pic3"></label>
+                              <label for="pic4"></label>
+                              <label for="pic5"></label>
+                        </div>
+                        <div class="wrap-image">
+                              <img src="images/pic1.jpg" alt="" width="1226px" height="460px">
+                              <img src="images/pic2.jpeg" alt="" width="1226px" height="460px">
+                              <img src="images/pic3.jpg" alt="" width="1226px" height="460px">
+                              <img src="images/pic4.jpg" alt="" width="1226px" height="460px">
+                              <img src="images/pic5.jpg" alt="" width="1226px" height="460px">
+                        </div>
+                  </div>
+            </div>
+
       </div>
-      <div class="top-list-r">
-        <a href="#">登录</a>
-        <span>|</span>
-        <a href="#">注册</a>
-        <span>|</span>
-        <a href="#">消息通知</a>
-        <div class="shop">购物车（0）
-          <div class="empty">
-            购物车中还没有商品，赶紧选购吧！
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-  </div>
-  <div id="header">
-    <a href="" class="hlogo"><img src="images/logo-s.png" alt=""></a>
-    <ul class="hnav">
-      <li><a class="hlink" href="">小米手机</a>
-        <div class="xiala">
-          <div class="con">
-            <ul class="xnav">
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-      <li><a class="hlink" href="">Red米红米</a>
-        <div class="xiala">
-          <div class="con">
-            <ul class="xnav">
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-      <li><a class="hlink" href="">电视</a>
-        <div class="xiala">
-          <div class="con">
-            <ul class="xnav">
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-      <li><a class="hlink" href="">笔记本</a>
-        <div class="xiala">
-          <div class="con">
-            <ul class="xnav">
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-      <li><a class="hlink" href="">家电</a>
-        <div class="xiala">
-          <div class="con">
-            <ul class="xnav">
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-      <li><a class="hlink" href="">路由器</a>
-        <div class="xiala">
-          <div class="con">
-            <ul class="xnav">
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-      <li><a class="hlink" href="">智能硬件</a>
-        <div class="xiala">
-          <div class="con">
-            <ul class="xnav">
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-      <li><a class="hlink" href="">服务</a>
-        <div class="xiala">
-          <div class="con">
-            <ul class="xnav">
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-      <li><a class="hlink" href="">社区</a>
-        <div class="xiala">
-          <div class="con">
-            <ul class="xnav">
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-              <li class="xnav-item"><a href=""><img src="images/hproduct1.png" width="160px" height="110px" alt=""><span
-                    class="xtext">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </li>
-      </li>
-    </ul>
-    <div class="rs">
-      <input type="submit" class="i" value="">
-      <input type="text" class="t">
-    </div>
-  </div>
-  <div id="banner">
-    <div class="aside">
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a href="javascript:;" class="item-link">手机 电话卡</a>
-          <div class="show-production">
-            <ul class="item-wrap">
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="javascript:;" class="item-link">电视 盒子</a>
-          <div class="show-production">
-            <ul class="item-wrap">
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="javascript:;" class="item-link">笔记本 显示器 平板</a>
-          <div class="show-production">
-            <ul class="item-wrap">
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="javascript:;" class="item-link">家电 插线板</a>
-          <div class="show-production">
-            <ul class="item-wrap">
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="javascript:;" class="item-link">出行 穿戴</a>
-          <div class="show-production">
-            <ul class="item-wrap">
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="javascript:;" class="item-link">智能 路由器</a>
-          <div class="show-production">
-            <ul class="item-wrap">
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="javascript:;" class="item-link">电源 配件</a>
-          <div class="show-production">
-            <ul class="item-wrap">
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="javascript:;" class="item-link">健康 儿童</a>
-          <div class="show-production">
-            <ul class="item-wrap">
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="javascript:;" class="item-link">耳机 音箱</a>
-          <div class="show-production">
-            <ul class="item-wrap">
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a href="javascript:;" class="item-link">生活 箱包</a>
-          <div class="show-production">
-            <ul class="item-wrap">
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-              <li class="show-second"><a href=""><img src="images/hproduct1.png" alt=""><span class="text">小米</span></a>
-              </li>
-
-
-            </ul>
-          </div>
-        </li>
-
-
-      </ul>
-    </div>
-
-
-
-    <input type="radio" name="radio" id="pic1" checked>
-    <input type="radio" name="radio" id="pic2">
-    <input type="radio" name="radio" id="pic3">
-    <input type="radio" name="radio" id="pic4">
-    <input type="radio" name="radio" id="pic5">
-    <div class="page">
-      <label for="pic1"></label>
-      <label for="pic2"></label>
-      <label for="pic3"></label>
-      <label for="pic4"></label>
-      <label for="pic5"></label>
-    </div>
-    <div class="wrap-image">
-      <img src="images/pic1.jpg" alt="">
-      <img src="images/pic2.jpeg" alt="">
-      <img src="images/pic3.jpg" alt="">
-      <img src="images/pic4.jpg" alt="">
-      <img src="images/pic5.jpg" alt="">
-    </div>
-    <div class="left">
-      <label for="pic1"></label>
-      <label for="pic2"></label>
-      <label for="pic3"></label>
-      <label for="pic4"></label>
-      <label for="pic5"></label>
-    </div>
-    <div class="right">
-      <label for="pic1"></label>
-      <label for="pic2"></label>
-      <label for="pic3"></label>
-      <label for="pic4"></label>
-      <label for="pic5"></label>
-    </div>
-  </div>
-
-  </div>
 </body>
 
 </html>
