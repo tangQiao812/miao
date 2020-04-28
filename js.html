@@ -1,0 +1,65 @@
+<script type=1>
+  var sum = 0
+
+  for (var i = 1; i <= 12; i++) {
+    var num = Number(prompt("请输入第" + i + "月的结余"))
+    sum = sum + sum
+  }
+  var result = sum / 12
+  console.log("$" + result.toFixed(2))
+</script>
+<script type=1>
+  var n = Number(prompt())
+  var allAge = 0
+
+  for (var i = 0; i < n; i++) {
+    var age = Number(prompt())
+    allAge += age
+  }
+
+  console.log((allAge / n).toFixed(2))
+</script>
+<script>//第n个素数，非素数小于根号x有一个根可以被整除
+  var n = +prompt()
+  var isPrime
+  var count = 0
+
+
+  for (var x = 2; ; x++) {
+    isPrime = true
+    for (var j = 2; j <= Math.sqrt(x); j++) {
+      if (x % j == 0) {
+        isPrime = false
+        break
+      }
+    }
+
+    if (isPrime) {
+      count++
+      if (count == n) {
+        console.log(x)
+        break
+      }
+    }
+  }
+
+
+  function find(x, y, howDidIGetHhere) {
+    if (x == 6 && y == 3) {
+      console.log(howDidIGetHhere)
+    } else if (x > 6 || y > 3) {
+      return
+    } else {
+      find(x + 1, y, howDidIGetHhere + '>')
+      find(x, y + 1, howDidIGetHhere + 'v')
+    }
+  }
+  find(0, 0, '')
+
+
+
+
+
+
+
+</script>

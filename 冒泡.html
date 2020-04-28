@@ -1,0 +1,64 @@
+<script>
+  // **
+  //  * @param {number[]} nums
+  //  * @return {number[]}
+  //  *冒泡排序1
+
+  var sortArray = function (nums) {
+    for (j = nums.length - 2; j >= 0; j--) {
+      var flag = false //没有一次都没有交换位置都话，需要知道内层循环有没有执行，所以加一个flag，没有进过内循环都话就直接返回nums
+      for (i = 0; i <= j; i++) {
+        if (nums[i] > nums[i + 1]) {
+          var t = nums[i + 1]
+          nums[i + 1] = nums[i]
+          nums[i] = t
+          flag = true
+        }
+
+      }
+      if (flag = false) {
+        return nums
+      }
+
+    }
+    return nums
+  }
+</script>
+<script>//[2,3,1,6,9],下标0设为minIdex,和右边都数比较，第一次内循环把最小数换到nums[0]的位置
+  //然后再从下标1开始继续和右边数比较，循环此操作，把第一小第二小第三小如此类推的数都找出来并放在0，1，2...的位置
+  var sortArray = function (nums) {
+    for (i = 0; i < nums.length; i++) {
+      var minIdex = i
+      for (j = i + 1; j < nums.length; j++) {
+        if (nums[j] < nums[minIdex]) {
+          minIdex = j
+        }
+      }
+      var t = nums[i]
+      nums[i] = nums[minIdex]
+      nums[minIdex] = t
+    }
+    return nums
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

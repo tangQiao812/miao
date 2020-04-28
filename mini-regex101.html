@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  Input RegExp: <input type="text" id="regexp"><br>
+  Input String: <textarea name="" id="string" cols="30" rows="10">foobarfoobazfoobaa</textarea><br>
+  Show Result: <div id="result"></div>
+  <style>
+    em {
+      background-color: red;
+    }
+  </style>
+  <script>
+    var regexpInput = document.getElementById('regexp')
+    var stringInput = document.getElementById('string')
+    var resultDiv = document.getElementById('result')
+
+    regexpInput.onkeyup = run
+    stringInput.onkeyup = run
+    function run() {
+      var re = new RegExp(regexpInput.value, 'g')
+      var str = stringInput.value//读取文本框或textarea中的内容用.value
+      var result = getResult(re, str)
+      resultDiv.innerHTML = result//设置元素内容用innerHtml
+    }
+    function getResult(re, str) {
+      var result = ''
+      var match
+      var lastIndex = 0
+      while (match = re.exec(str)) {
+        result += str.slice(lastIndex, match.index)
+        result += '<em>' + match[0] + '</em>'
+        lastIndex = re.lastIndex
+      }
+      result += str.slice(lastIndex)//最后匹配不到的部分
+      return result
+    }
+  </script>
+</body>
+
+</html>

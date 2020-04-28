@@ -1,0 +1,38 @@
+<script>
+  function AryToList(ary) {
+    if (ary.length == 0) {
+      return null
+    }
+    var tmp = []
+    for (var i = 0; i < ary.length; i++) {
+      var node = {
+        val: ary[i],
+        next: null,
+      }
+      tmp.push(node)
+    }
+    for (var i = 0; i < ary.length - 1; i++) {
+      tmp[i].next = tmp[i + 1]
+    }
+    return tmp[0]
+  }
+</script>
+<script>
+  function AryToList2(ary) {
+    if (ary.length == 0) {
+      return null
+    }
+    var dummy = {}
+    var prev = dummy
+    for (var i = 0; i < ary.length; i++) {
+      var node = {
+        val: ary[i],
+        next: null,
+      }
+      prev.next = node
+      prev = node
+    }
+    return dummy.next
+
+  }
+</script>

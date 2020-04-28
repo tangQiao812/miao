@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      margin-top: 0;
+      height: 100%;
+
+    }
+
+    html {
+      font-size: 20px;
+    }
+
+    #container {
+      width: 100rem;
+      margin: 0;
+      height: 11.6rem;
+      background-color: #f2f2f2;
+      line-height: 11.6rem;
+
+    }
+
+    .logo,
+    .user {
+      vertical-align: middle;
+    }
+
+    .logo {
+      margin-right: 3rem;
+      margin-left: 3rem;
+    }
+
+    .user {
+      margin-right: 2rem;
+      margin-left: 2rem;
+    }
+
+    .logo {
+
+      width: 6.6rem;
+
+    }
+
+    .user {
+
+      width: 8rem;
+    }
+
+    input {
+      width: 72.2rem;
+      height: 8.6rem;
+      font-size: 3.6rem;
+      color: #e9e9e9;
+
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+    #header {
+      width: 100rem;
+      margin: 0;
+      height: 8rem;
+      background-color: #f2f2f2;
+      line-height: 8rem;
+    }
+
+    .wrap li {
+      padding: 0 3.4rem;
+      display: inline-block;
+      font-size: 3.6rem;
+    }
+
+    .wrap li a {
+      color: #747474;
+    }
+
+    .wrap li a:active {
+      color: #ff6c1a;
+    }
+
+    #banner img {
+      width: 100rem;
+    }
+
+    .cell1 {
+      width: 100rem;
+      margin: 0;
+
+    }
+
+    .cell1 img,
+    .cell2 img {
+      width: 20rem;
+    }
+
+    .cell1 a,
+    .cell2 a {
+      display: inline-block;
+      margin-left: -1rem;
+    }
+
+    .cell2 {
+      width: 100rem;
+    }
+
+    section {
+      width: 100rem;
+      height: 72rem;
+      display: flex;
+      flex-flow: column wrap;
+      background-color: #f2f2f2;
+    }
+
+    section img {
+      width: 49.6rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <img
+      src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAAAyCAYAAAD2vz2aAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjQ2OUE2MkU0RTQ4MTFFNzgxOTZBRDJFQjk4Qjk0NjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjQ2OUE2MkY0RTQ4MTFFNzgxOTZBRDJFQjk4Qjk0NjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCOUQ0QkM2RjREQ0MxMUU3ODE5NkFEMkVCOThCOTQ2NCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCOUQ0QkM3MDREQ0MxMUU3ODE5NkFEMkVCOThCOTQ2NCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PiL8gcIAAAF1SURBVHja7Ju/LwRRFEbf+FVsQ0dBdJKNSksUSqVCr6AhKxGVwn+gVUpQEI1So5XoZUOhEbKMDiESIeOTzPbvzpoxz5wvOd3duzsn++7cSXajZMU9OOeGXPmTiHtxIU7FoYh/oe+ZmPKsjSMJS1yY+RS7YrNDcTdi1Le4y4WbHrEorsRcUW8asrB2BsSxWEeYLVtiCWG2bIsJhPmnV+zkeV3/TZhLv2HzCLNlFWG2TIqRvHYZa97FR84XXEvnUSeZEft/LexZDIvXnIVFop6uCQ3RnaHHeBmO5FMBstrPjZdiTUyLlww9Bqs6w87FcobX9Vd56B+IZoZjXVlhP0f0qAwfJKS1ookw+w0HYaEFYQVs+j4ZE7Oed6o3sVfA00OphW2IBUN9S5xU+Uhad6A+ZhhDnyAMYQhDGMIQRhCGMIQhDGEEYQhDGMIQhjCCMIQhDGEIIwhDWFHCLP81vPOsezT0/BK3nj0tP1i59qxrGXrG3wIMAK5yNsqRAjAyAAAAAElFTkSuQmCC"
+      alt="" class="logo">
+    <input type="text" value="搜索商品名称">
+    <img src="https://img.icons8.com/windows/32/000000/checked-user-male--v1.png" class="user">
+  </div>
+  <div id="header">
+    <ul class="wrap">
+      <li><a href="">推荐</a></li>
+      <li><a href="">手机</a></li>
+      <li><a href="">智能</a</li> <li><a href="">电视</a</li> <li><a href="">笔记本</a</li> <li><a href="">家电</a</li> </ul>
+                  </div> <div id="banner">
+                <img
+                  src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/27392573fcdca52229bb6b1f44dae5e5.jpg?thumb=1&w=720&h=360"
+                  alt="">
+  </div>
+  <div class="cell1">
+    <a href=""><img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/cb65daec7ef7b52cc785f88f78efba37.png?thumb=1&w=144&h=152"
+        alt=""></a>
+    <a href=""><img src="https://i8.mifile.cn/v1/a1/eb5024fe-dfe3-6e53-3e18-675bef5fa06e.webp" alt=""></a>
+    <a href=""><img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/780602689f55569ed27edf86cda44d03.jpg?thumb=1&w=144&h=152"
+        alt=""></a>
+    <a href=""><img src="https://i8.mifile.cn/v1/a1/e8bc849a-0a3b-21a0-6810-7da3a3903dee.webp" alt=""></a>
+    <a href=""><img src="https://i8.mifile.cn/v1/a1/7dbcbf87-6a58-adb6-2f3f-bb3dae3e9c80.webp" alt=""></a>
+  </div>
+  <div class="cell2">
+    <a href=""><img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bc1c677a6e10e42d00fb0a063662fbf9.png?thumb=1&w=144&h=152"
+        alt=""></a>
+    <a href=""><img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9ea68dee2bfa0e55a82236b0d968e975.png?thumb=1&w=144&h=152"
+        alt=""></a>
+    <a href=""><img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1b92680601206b48b885d883c23b83e2.png?thumb=1&w=144&h=152"
+        alt=""></a>
+    <a href=""><img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9425031cdd7af22d9a23a5ae16d1f57c.jpg?thumb=1&w=144&h=152"
+        alt=""></a>
+    <a href=""><img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f11f9df6b0b0b428f8c8fc3267131830.png?thumb=1&w=144&h=152"
+        alt=""></a>
+  </div>
+  <section>
+    <a href=""><img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/32b5d24417b673008f386592c4d17046.jpg?thumb=1&w=358&h=508"
+        alt="" width=""></a>
+    <a href=""><img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4aea81c738383c9787b49c3d5e6a7ab0.jpg?thumb=1&w=358&h=252"
+        alt="" width=""></a>
+    <a href=""><img
+        src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/267e988a99b5cf4e960747e8aa5fa831.jpg?thumb=1&w=358&h=252"
+        alt="" width="" height=""></a>
+    </div>
+  </section>
+</body>
+
+</html>

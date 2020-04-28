@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <style>
+    x* {
+      background-color: rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 440px;
+      height: 440px;
+      background-color: #e5e5e5;
+      position: relative;
+      border-radius: 10px;
+    }
+
+
+
+    .father {
+      box-shadow: 0 0 1px black;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      position: absolute;
+      background-color: #fff;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+    }
+
+    span:nth-child(n+1):nth-child(-n+12) {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: inline-block;
+      margin: auto;
+      font-size: 32px;
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    /* 表盘数字摆放 */
+    span:nth-child(1) {
+      transform: rotate(-60deg) translate(150px) rotate(60deg);
+    }
+
+    span:nth-child(2) {
+      transform: rotate(-30deg) translate(150px) rotate(30deg);
+    }
+
+    span:nth-child(3) {
+      transform: rotate(0deg) translate(150px);
+    }
+
+    span:nth-child(4) {
+      transform: rotate(30deg) translate(150px) rotate(-30deg);
+    }
+
+    span:nth-child(5) {
+      transform: rotate(60deg) translate(150px) rotate(-60deg);
+    }
+
+    span:nth-child(6) {
+      transform: rotate(90deg) translate(150px) rotate(-90deg);
+    }
+
+    span:nth-child(7) {
+      transform: rotate(120deg) translate(150px) rotate(-120deg);
+    }
+
+    span:nth-child(8) {
+      transform: rotate(150deg) translate(150px) rotate(-150deg);
+    }
+
+    span:nth-child(9) {
+      transform: rotate(180deg) translate(150px) rotate(-180deg);
+    }
+
+    span:nth-child(10) {
+      transform: rotate(210deg) translate(150px) rotate(-210deg);
+    }
+
+    span:nth-child(11) {
+      transform: rotate(240deg) translate(150px) rotate(-240deg);
+    }
+
+    span:nth-child(12) {
+      transform: rotate(270deg) translate(150px) rotate(-270deg);
+    }
+
+    /* 秒针 */
+    span:nth-child(13) {
+      position: absolute;
+      display: inline-block;
+      width: 4px;
+      height: 162px;
+      left: 50%;
+      margin-left: -2px;
+      top: 50px;
+      transform-origin: 50% 130px;
+      animation: foo 60s infinite steps(60);
+    }
+
+    span:nth-child(13)::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      animation: second 1s infinite cubic-bezier(0.4, 2.08, 0.55, 0.44);
+      transform-origin: 50% 130px;
+      background-color: #000;
+    }
+
+    @keyframes second {
+
+      /*控制伪元素的一次抖动 */
+      from {
+        transform: rotate(0deg)
+      }
+
+      20%,
+      to {
+        transform: rotate(6deg)
+      }
+
+    }
+
+    /* 表盘原点 */
+    span:nth-child(14) {
+      position: absolute;
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background-color: #000;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+
+    /* 时针 */
+    span:nth-child(15) {
+      position: absolute;
+      display: inline-block;
+      width: 10px;
+      height: 70px;
+      background-color: #000;
+      top: 110px;
+      left: 50%;
+      margin-left: -5px;
+      transform-origin: 50% 70px;
+      animation: foo 86400s -2200s infinite;
+    }
+
+    /* 分针 */
+    span:nth-child(16) {
+      position: absolute;
+      display: inline-block;
+      width: 6px;
+      height: 135px;
+      background-color: #000;
+      top: 45px;
+      left: 50%;
+      margin-left: -3px;
+      transform-origin: 50% 135px;
+      animation: foo 3600s -1440s infinite;
+
+    }
+
+    @keyframes foo {
+      from {
+        transform: rotate(0deg)
+      }
+
+      to {
+        transform: rotate(360deg)
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="father">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+      <span>6</span>
+      <span>7</span>
+      <span>8</span>
+      <span>9</span>
+      <span>10</span>
+      <span>11</span>
+      <span>12</span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</body>
+
+</html>

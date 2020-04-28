@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <script>
+    function bubble(ary) {
+      //外层循环控制比较轮数
+      for (var i = 0; i < ary.length - 1; i++) {
+        //内层循环控制每一轮比较的次数
+        for (var j = 0; j < ary.length - 1 - i; j++) {
+          if (ary[j] > ary[j + 1]) {
+            [ary[j], ary[j + 1]] = [ary[j + 1], ary[j]] //j,j_1该条件下交换位置
+          }
+        }
+      }
+      return ary
+    }
+    var ary = [3, 2, 14, 24, 1]
+    ary = bubble(ary)
+    console.log(ary)
+
+
+  </script> -->
+  <script>
+    function insert(ary) {
+      //准备一个新数组用来储存抓到手里的牌，先抓一张进来
+      var handle = []
+      handle.push(ary[0])
+      //从第二项开始依次抓牌，一直到把牌抓光
+      for (i = 1; i < ary.length; i++) {
+        //A是新抓的牌
+        var A = ary[i]
+        //和handdle手里的牌依次比较
+        for (var j = handle.length - 1; j >= 0; j--) {
+          //每一次要比较的手里的牌
+          var B = handle[j]
+          //如果A比B大，把A放到B后面
+          if (A > B) {
+            handle.splice(j + 1, 0, A)
+            break
+          }
+          if (j === 0) {
+            handle.unshift(A)
+          }
+        }
+
+      }
+      return handle
+    }
+    let ary = [12, 6, 24, 5, 1]
+    ary = insert(ary)
+    console.log(ary)
+  </script>
+</body>
+
+</html>

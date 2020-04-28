@@ -1,0 +1,128 @@
+<script id="ch0103/02">
+  console.log((Number(prompt()) + Number(prompt())) * Number(prompt()))
+</script>
+<script id="ch0103/03">
+  console.log((Number(prompt()) + Number(prompt())) / Number(prompt()))
+</script>
+<script id="ch0103/04">
+  var a = +prompt(), b = +prompt()
+  console.log(Math.trunc(a / b))
+  console.log(a % b)
+</script>
+<script id="ch0103/05">
+  var a = +prompt(), b = +prompt()
+  console.log((a / b).toFixed(9))
+</script>
+<script id="ch0103/06">
+  var a = +prompt(), b = +prompt()
+  var c = (b / a) * 100
+  console.log(c + '%')
+</script>
+<script id="ch0103/07">
+  var a = +prompt(), b = +prompt(), c = +prompt(), d = +prompt(), x = +prompt()
+  r = a * Math.pow(x, 3) + b * Math.pow(x, 2) + c * x + d
+  console.log(r.toFixed(7))
+</script>
+<script id="ch0103/08">
+  var F = +prompt()
+  var C = 5 * (F - 32) / 9
+  console.log(C.toFixed(5))
+</script>
+<script id="ch0103/09">
+  var r = +prompt()
+  console.log((2 * r).toFixed(4), (2 * Math.PI * r).toFixed(4), (Math.PI * r * r).toFixed(4))
+</script>
+<script id="ch0103/10">
+  var r1 = +prompt(), r2 = +prompt()
+  var R = 1 / (1 / r1 + 1 / r2)
+  console.log(R.toFixed(2))
+</script>
+<script id="ch0103/11">
+  var a = +prompt(), b = +prompt()
+  console.log(a % b)
+</script>
+<script id="ch0103/12">
+  var r = +prompt()
+  V = 4 / 3 * 3.14 * r * 3
+  console.log(V.toFixed(2))
+</script>
+<script id="ch0103/13">
+  var n = +prompt()
+  var a = n % 10
+  var b = ((n - a) / 10) % 10
+  var c = (n - a - 10 * b) / 100
+  console.log(a.toString() + b.toString() + c.toString())
+//console.log('' + a + b + c)
+</script>
+<script id="ch0103/14">
+  var h = +prompt(), r = +prompt()
+  console.log(Math.ceil(20000 / (r * r * Math.PI * h)))
+</script>
+<script id="ch0103/15">
+  var n = +prompt(), x = +prompt(), y = +prompt()
+  console.log(n - Math.ceil(y / x))
+</script>
+<script id="ch0103/16">
+  var Xa = +prompt(), Ya = +prompt(), Xb = +prompt(), Yb = +prompt()
+  l = console.log(Math.sqrt((Xb - Xa) ** 2 + (Yb - Ya) ** 2).toFixed(3))
+</script>
+<script id="ch0103/17">
+  var x1 = +prompt(), y1 = +prompt(), x2 = +prompt(), y2 = +prompt(), x3 = +prompt(), y3 = +prompt()
+  var a = Math.sqrt((y2 - y1) ** 2 + (x2 - x1) ** 2)
+  var b = Math.sqrt((y3 - y2) ** 2 + (x3 - x2) ** 2)
+  var c = Math.sqrt((y3 - y1) ** 2 + (x3 - x1) ** 2)
+  var p = (a + b + c) / 2
+  console.log(Math.sqrt(p * (p - a) * (p - b) * (p - c)).toFixed(2))
+</script>
+<script id="ch0103/18">
+  var a1 = +prompt(), a2 = +prompt(), n = +prompt()
+  console.log(a1 + (a2 - a1) * (n - 1))
+</script>
+<script id="ch0103/19">
+  var A = +prompt(), B = +prompt()
+  console.log(A * B)
+</script>
+<script id="ch0103/20">
+  var n = +prompt()
+  console.log(2, n)
+</script>
+<script id="ch0104/01">
+  var n = Number(prompt())
+  if (n > 0) {
+    console.log('positive')
+  } else if (n == 0) {
+    console.log('zero')
+  } else if (n < 0) {
+    console.log('negative')
+  } else {
+    console.log('输入错误')
+  }
+</script>
+<script id="ch0103/20">
+  var n = +prompt()
+  console.log(2, n)
+</script>
+<script id="ch0103/20">
+  var n = +prompt()
+  console.log(2, n)
+</script>
+<script id="ch0103/20">
+  var n = +prompt()
+  console.log(2, n)
+</script>
+<script id='水仙花数'>
+  var digitWidth = function (n) {
+    var digitWidth = 0
+    do {
+      var digit = n % 10
+      n = (n - digit) / 10
+      digitWidth += 1
+    } while (n > 0)
+    console.log(digitWidth)
+  }
+  var power = function (n) {
+
+  }
+
+
+</script>

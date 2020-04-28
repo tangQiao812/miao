@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <style>
+      x* {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      div {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        opacity: 0.5;
+        transition: 2s;
+      }
+
+      section:hover>div:first-child {
+
+        transform: rotatex(-90deg) translatez(50px);
+
+      }
+
+      section:hover>div:nth-child(2) {
+        background-color: green;
+        transform: rotatex(90deg) translatez(50px);
+      }
+
+      section:hover>div:nth-child(3) {
+        transform: rotatey(-90deg) translatez(50px);
+
+        background-color: blue;
+      }
+
+      section:hover>div:nth-child(4) {
+
+        transform: rotatey(90deg) translatez(50px);
+        ;
+
+        background-color: grey;
+      }
+
+      section:hover>div:nth-child(5) {
+        transform: translatez(-50px);
+
+        background-color: purple;
+      }
+
+      section:hover>div:nth-child(6) {
+
+        transform: translatez(50px);
+
+        background-color: violet;
+      }
+
+      /*
+      div:first-child {
+
+        transform: rotatex(-90deg) translatez(50px);
+
+      }
+
+      div:nth-child(2) {
+        background-color: green;
+        transform: rotatex(90deg) translatez(50px);
+      }
+
+      div:nth-child(3) {
+        transform: rotatey(-90deg) translatez(50px);
+
+        background-color: blue;
+      }
+
+      div:nth-child(4) {
+
+        transform: rotatey(90deg) translatez(50px);
+        ;
+
+        background-color: grey;
+      }
+
+      div:nth-child(5) {
+        transform: translatez(-50px);
+
+        background-color: purple;
+      }
+
+      div:nth-child(6) {
+
+        transform: translatez(50px);
+
+        background-color: #fff;
+      } */
+      section {
+        position: relative;
+
+        width: 500px;
+        height: 500px;
+        transform-style: preserve-3d;
+
+        transform: perspective(2000px);
+
+        animation-name: foo;
+
+        animation-duration: 8s;
+
+        animation-iteration-count: infinite;
+        /* 无数次 */
+
+      }
+
+      section:hover {
+        animation-play-state: paused;
+      }
+
+
+      @keyframes foo {
+        from {
+          transform: rotatex(0deg) rotatey(0deg);
+        }
+
+        to {
+          transform: rotatex(360deg) rotatey(800deg);
+        }
+
+      }
+    </style>
+  </head>
+
+  <body>
+    鼠标触摸看效果！
+    <section>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </section>
+  </body>
+
+  </html>
+</body>
+
+</html>
