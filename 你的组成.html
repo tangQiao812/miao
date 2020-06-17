@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function eve() {
+    //   this.kind = kind
+    //   this.soft = soft
+    //   this.mind = mind
+    //   this.intrest = intrest
+    //   this.habbits = habbits
+    //   if (kind) {
+    //     aler'go on'
+    //     if (soft) {
+    //       aler'go on'
+    //       if (mind) {
+    //         aler'go on'
+    //         if (intrest) {
+    //           aler'go on'
+    //           if (habbits) {
+    //             aler'perfect'
+    //           }
+    //         }
+    //       }
+    //     }
+    //   }
+    //   alert'false'
+    // }
+    var kind = window.prompt("这家伙善良吗", "")
+    if (kind == '善良' || '还行' || '嗯') {
+      alert('go on')
+      var soft = window.prompt("这家伙温柔吗", "")
+      if (soft == '温柔' || '还行' || '嗯') {
+        alert('go on')
+        var clever = window.prompt("这家伙聪明吗", "")
+        if (clever == '聪明' || '还行' || '嗯') {
+          alert('go on')
+          var selfish = window.prompt("这家伙很自私吗", "")
+          if (selfish == '没有' || '那没有' || '不会' || '没有吧' || '还好') {
+            alert('很好可以相处看看了')
+            alert('emm...')
+            var love = window.prompt("你是不是有一点喜欢她了", "")
+            if (love == '有点' || '可能' || '也许' || '一点点') {
+              alert('愿她是对的人呀')
+              document.write('我喜欢你')
+            } else {
+              alert("算了")
+            }
+          } else {
+            alert("算了")
+          }
+        } else {
+          alert("算了")
+        }
+      } else {
+        alert("算了")
+      }
+    } else {
+      alert("算了")
+    }
+
+
+  </script>
+</body>
+
+</html>
